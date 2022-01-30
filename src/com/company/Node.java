@@ -1,31 +1,36 @@
 package com.company;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
 
-public class Node<K,V> {
+public class Node<K,V> implements Comparable{
 
-    private static int NODE_ID = 0;
+    private int node_id;
     private Map<K,V> mProperties;
     private Map<K,V> oProperties;
+    private static int count;
 
     public Node(){
-        this.NODE_ID = NODE_ID + 1;
+        count++;
+        this.node_id = count;
         this.mProperties = new HashMap<>();
+        this.oProperties = new HashMap<>();
     }
 
     public Node(HashMap<K,V> mProperties){
-        this.NODE_ID = NODE_ID + 1;
+        count++;
+        this.node_id = count;
         this.mProperties = mProperties;
     }
 
-    public static int getNodeId() {
-        return NODE_ID;
+    public int getNode_id() {
+        return this.node_id;
     }
 
-    public static void setNodeId(int nodeId) {
-        NODE_ID = nodeId;
+    public void setNode_id(int node_id) {
+        this.node_id = node_id;
     }
 
     public Map<K, V> getmProperties() {
@@ -46,8 +51,9 @@ public class Node<K,V> {
 
     @Override
     public String toString() {
-        return "Node{" +"Node ID = "+ this.NODE_ID + "," +
-                "mProperties=" + mProperties +
+        return "Node{" +
+                "node_id=" + node_id +
+                ", mProperties=" + mProperties +
                 ", oProperties=" + oProperties +
                 '}';
     }
@@ -63,5 +69,10 @@ public class Node<K,V> {
     @Override
     public int hashCode() {
         return Objects.hash(getmProperties(), getoProperties());
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }

@@ -1,55 +1,59 @@
 package com.company;
 
-public class Graph<E> implements DirectedMultigraph{
-    private static int GRAPH_ID = 0;
-    private Node node;
-    private Edge edge;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Graph<E> implements NodeLabeledGraph<E>, EdgelabeledGraph<E>, PropertyLabeledGraph<E>{
+    private List<Node> nodeList;
+    private List<Edge> edgeList;
+    private int graph_id;
+    private static int count;
 
     public Graph(){
-        this.GRAPH_ID = this.GRAPH_ID + 1;
-        this.node = null;
-        this.edge = null;
+        count++;
+        nodeList = new ArrayList<>();
+        edgeList = new ArrayList<>();
+        this.graph_id = count;
     }
 
-    public Graph(Node node, Edge edge ){
-        this.GRAPH_ID = this.GRAPH_ID + 1;
-        this.node = node;
-        this.edge = edge;
-    }
 
-    public void setNode(Node node) {
-        this.node = node;
-    }
-
-    public void setEdge(Edge edge) {
-        this.edge = edge;
+    @Override
+    public void addNode(Node node) {
+        this.nodeList.add(node);
     }
 
     @Override
-    public Node getNode() {
-        return null;
-    }
-
-    @Override
-    public Edge getEdge() {
-        return null;
+    public void addEdge(Edge edge) {
+        this.edgeList.add(edge);
     }
 
     @Override
     public Node Source(Edge e) {
-        return null;
+        return e.getSource();
     }
 
     @Override
     public Node Target(Edge e) {
-        return null;
+        return e.getTarget();
     }
 
     @Override
-    public String toString() {
-        return "Graph{" +
-                "node=" + node +
-                ", edge=" + edge +
-                '}';
+    public void addEdgeLabels(Label label) {
+        
+    }
+
+    @Override
+    public void addNodeLabels(Label label) {
+
+    }
+
+    @Override
+    public void addMandatoryProperties(List<E> mandPropList) {
+
+    }
+
+    @Override
+    public void addOptionalProperties(List<E> opPropList) {
+
     }
 }
