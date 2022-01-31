@@ -39,7 +39,7 @@ public class Graph<E> implements NodeLabeledGraph<E>, EdgelabeledGraph<E>, Prope
 
     @Override
     public void addEdgeLabels(Label label) {
-        
+
     }
 
     @Override
@@ -47,13 +47,14 @@ public class Graph<E> implements NodeLabeledGraph<E>, EdgelabeledGraph<E>, Prope
 
     }
 
+
     @Override
-    public void addMandatoryProperties(List<E> mandPropList) {
+    public void addMandatoryProperties(E mandProp) {
 
     }
 
     @Override
-    public void addOptionalProperties(List<E> opPropList) {
+    public void addOptionalProperties(E opProp) {
 
     }
 }
