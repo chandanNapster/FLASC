@@ -44,9 +44,9 @@ public class Node<K,V> implements Comparable{
     @Override
     public String toString() {
         return "Node{" +
-                "node_id=" + node_id +
-                ", mPropertiesList=" + mPropertiesList +
-                ", oPropertiesList=" + oPropertiesList +
+                "node_id=" + node_id + "\n" +
+                ", mPropertiesList=" + mPropertiesList + "\n" +
+                ", oPropertiesList=" + oPropertiesList + "\n" +
                 '}';
     }
 

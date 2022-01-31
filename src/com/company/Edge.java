@@ -64,10 +64,10 @@ public class Edge<K,V> implements Comparable {
     @Override
     public String toString() {
         return "Edge{" +
-                "source=" + source +
-                ", target=" + target +
-                ", mPropertiesList=" + mPropertiesList +
-                ", oPropertiesList=" + oPropertiesList +
+                "source=" + source + "\n" +
+                ", target=" + target + "\n" +
+                ", mPropertiesList=" + mPropertiesList + "\n" +
+                ", oPropertiesList=" + oPropertiesList + "\n"+
                 ", edge_id=" + edge_id +
                 '}';
     }

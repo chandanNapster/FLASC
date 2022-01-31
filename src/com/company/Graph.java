@@ -49,12 +49,22 @@ public class Graph<E> implements NodeLabeledGraph<E>, EdgelabeledGraph<E>, Prope
 
 
     @Override
-    public void addMandatoryProperties(E mandProp) {
+    public void addMandatoryNodeProperty(E mandNodeProp) {
 
     }
 
     @Override
-    public void addOptionalProperties(E opProp) {
+    public void addOptionalNodeProperty(E opNodeProp) {
+
+    }
+
+    @Override
+    public void addMandatoryEdgeProperty(E mandEdgeProp) {
+
+    }
+
+    @Override
+    public void addOptionalEdgeProperty(E opEdgeProp) {
 
     }
 }
